@@ -1,113 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Github, FileText, MapPin, ExternalLink, Calendar, Award, Terminal, Cpu, BookOpen, Sun, Moon, Linkedin, Instagram } from 'lucide-react';
-
-// --- DATA SOURCE (Based on provided CV) ---
-const resumeData = {
-  profile: {
-    name: "Hyunho Kook",
-    title: "M.S. Student in CS @ POSTECH",
-    tagline: "Bridging Neuromorphic Computing & Efficient AI",
-    location: "Pohang, Korea / Pittsburgh, PA",
-    email: "kookhh0827@postech.ac.kr",
-    github: "https://github.com/", 
-    scholar: "https://scholar.google.com/",
-    linkedin: "https://www.linkedin.com/", // Placeholder
-    instagram: "https://www.instagram.com/", // Placeholder
-    visiting: "Visiting Scholar @ CMU (Aug 2025 - Feb 2026)",
-    image: "https://placehold.co/400x400/1e293b/06b6d4?text=HK", 
-  },
-  interests: [
-    "Neuromorphic Computing",
-    "Spiking Neural Networks",
-    "Efficient AI Inference",
-    "LLM Acceleration",
-    "Algorithm-based Acceleration"
-  ],
-  education: [
-    {
-      school: "Pohang University of Science and Technology (POSTECH)",
-      degree: "M.S. in Computer Science and Engineering",
-      period: "Feb 2024 - Present",
-      gpa: "4.15 / 4.30",
-      advisor: "Prof. Eunhyeok Park",
-      details: "Focusing on Efficient Computing and Neuromorphic AI."
-    },
-    {
-      school: "Pohang University of Science and Technology (POSTECH)",
-      degree: "B.S. in Computer Science and Engineering",
-      period: "Feb 2018 - Feb 2024",
-      gpa: "4.10 / 4.30 (Valedictorian)",
-      advisor: "Prof. Jaesik Park & Prof. Eunhyeok Park",
-      details: "Summa Cum Laude. Double major in CSE."
-    }
-  ],
-  experience: [
-    {
-      role: "Visiting Scholar",
-      org: "Carnegie Mellon University",
-      location: "Pittsburgh, PA",
-      period: "Aug 2025 - Feb 2026",
-      details: [
-        "Audio Language Model for Speaker Profiling (Prof. Bhiksha Raj)",
-        "Language model agent system and its acceleration (Prof. Beidi Chen)",
-        "Looped Transformer and Its Efficiency (Prof. Andrea Zanette)"
-      ]
-    },
-    {
-      role: "Undergraduate Research Intern",
-      org: "POSTECH (Efficient Computing Lab)",
-      location: "Pohang, Korea",
-      period: "Jan 2023 - Dec 2023",
-      details: [
-        "Applied Neural Architecture Search on Spiking Neural Networks.",
-        "interpreted SNN firing as quantization operations."
-      ]
-    },
-    {
-      role: "Information Security Enlisted",
-      org: "Republic of Korea Army",
-      location: "Icheon, Korea",
-      period: "Mar 2021 - Sep 2022",
-      details: [
-        "Detected and investigated intrusions in the army information system."
-      ]
-    }
-  ],
-  publications: [
-    {
-      title: "Maximal Coupling Speculative Jacobi Decoding",
-      authors: "Junhyuk So, Hyunho Kook, Eunhyeok Park",
-      venue: "ICLR 2026 (Under Review)",
-      status: "under_review",
-      desc: "Accelerate autoregressive generation ~12x times with no loss."
-    },
-    {
-      title: "Stabilizing Direct Training of Spiking Neural Networks",
-      authors: "Hyunho Kook, Byeongho Yu, Jeongmin Oh, Eunhyeok Park",
-      venue: "WACV 2026",
-      status: "accepted",
-      desc: "Handling Temporal Covariate Shift and Instability in Surrogate Gradient Descent."
-    },
-    {
-      title: "Grouped Speculative Decoding for Autoregressive Image Generation",
-      authors: "Junhyuk So, Juncheol Shin, Hyunho Kook, Eunhyeok Park",
-      venue: "ICCV 2025",
-      status: "accepted",
-      desc: "Accelerate autoregressive image generations ~3x times with minimal effects."
-    }
-  ],
-  awards: [
-    { title: "Bachelor's Best Paper", year: "2023", org: "POSTECH" },
-    { title: "Korean Army Security Defense Competition (2nd place)", year: "2021", org: "ROK Army" },
-    { title: "CODEGATE Int'l Hacking Competition (2nd place, Uni)", year: "2020", org: "Codegate" },
-    { title: "DEFCON 27 CTF (9th place)", year: "2019", org: "Defcon" },
-  ],
-  skills: {
-    languages: ["C/C++", "Python", "Java", "Verilog", "PHP"],
-    libs: ["PyTorch", "TensorFlow", "CUDA"],
-    tools: ["Linux", "Docker", "IDA", "GDB", "Git"]
-  }
-};
+import { resumeData } from './data/resumeData';
 
 // --- COMPONENTS ---
 
@@ -202,14 +95,11 @@ export default function Portfolio() {
             KOOK<span className="text-cyan-500 animate-pulse">.</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium">
-            {['About', 'Publications', 'Experience'].map(item => (
+            {['About', 'Publications', 'Experience', 'Education', 'Honors'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-cyan-500 transition-colors hidden sm:block">
                 {item}
               </a>
             ))}
-            <a href="mailto:kookhh0827@postech.ac.kr" className="text-cyan-500 hover:text-cyan-600 hidden sm:block">
-              Contact
-            </a>
             
             {/* Theme Toggle Button */}
             <button 
@@ -226,7 +116,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 max-w-5xl mx-auto z-10">
+      <section id="about" className="relative pt-32 pb-20 px-6 max-w-5xl mx-auto z-10">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6">
             <div className="space-y-2">
@@ -241,7 +131,7 @@ export default function Portfolio() {
             
             <p className={`max-w-lg leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
               Researching <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Neuromorphic Computing</span> and <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Efficient AI</span>. 
-              Currently exploring LLM acceleration and agent systems.
+              Currently exploring <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>LLM Acceleration</span> and <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Agent Systems</span>.
               Based in {resumeData.profile.location}.
             </p>
 
@@ -270,18 +160,12 @@ export default function Portfolio() {
                 <Linkedin size={20} />
               </a>
 
-              {/* Instagram Button - Icon Only */}
-              <a href={resumeData.profile.instagram} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center p-3 rounded-lg transition-all border ${
+              <a href={`mailto:${resumeData.profile.email}`} className={`flex items-center justify-center p-3 rounded-lg transition-all border ${
                 darkMode 
                   ? 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700 hover:border-cyan-500/50' 
                   : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200 hover:border-cyan-500/50 shadow-sm'
-              }`} aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-
-              <a href={`mailto:${resumeData.profile.email}`} className="flex items-center gap-2 px-5 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg transition-all shadow-lg shadow-cyan-900/20 ml-auto sm:ml-0">
-                <Mail size={18} />
-                <span className="hidden sm:inline">Email Me</span>
+              }`} aria-label="Email">
+                <Mail size={20} />
               </a>
             </div>
           </div>
@@ -293,7 +177,7 @@ export default function Portfolio() {
               <img 
                 src={resumeData.profile.image} 
                 alt="Profile" 
-                className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover object-top filter hover:brightness-110 transition-all duration-500"
               />
             </div>
           </div>
@@ -317,10 +201,13 @@ export default function Portfolio() {
       </section>
 
       {/* Main Content */}
+      {/* IMPORTANT FIX: Added id="about" here so the navigation link works.
+        The navigation bar links to #about, #publications, and #experience.
+      */}
       <main className="max-w-5xl mx-auto px-6 py-12 space-y-24 z-10 relative">
         
         {/* Publications */}
-        <section id="publications">
+        <section id="publications" className="scroll-mt-24">
           <SectionTitle icon={FileText} title="Selected Publications" isDark={darkMode} />
           <div className="grid gap-4">
             {resumeData.publications.map((pub, idx) => (
@@ -347,7 +234,7 @@ export default function Portfolio() {
         </section>
 
         {/* Experience */}
-        <section id="experience">
+        <section id="experience" className="scroll-mt-24">
           <SectionTitle icon={Terminal} title="Research Experience" isDark={darkMode} />
           <div className={`relative border-l-2 ml-3 space-y-12 ${darkMode ? 'border-slate-800' : 'border-slate-200'}`}>
             {resumeData.experience.map((exp, idx) => (
@@ -378,10 +265,10 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Education & Awards Grid */}
+        {/* Education & Teaching Grid */}
         <div className="grid md:grid-cols-2 gap-12">
           {/* Education */}
-          <section>
+          <section id="education" className="scroll-mt-24">
             <SectionTitle icon={Cpu} title="Education" isDark={darkMode} />
             <div className="space-y-6">
               {resumeData.education.map((edu, idx) => (
@@ -389,6 +276,7 @@ export default function Portfolio() {
                   <div className="space-y-1">
                     <h3 className={`font-bold ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>{edu.school}</h3>
                     <p className="text-cyan-500 text-sm">{edu.degree}</p>
+                    <p className={`text-sm mt-1 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>Advisor: {edu.advisor}</p>
                     <div className="flex justify-between text-xs text-slate-500 font-mono mt-2">
                       <span>{edu.period}</span>
                       <span>GPA: {edu.gpa}</span>
@@ -399,8 +287,35 @@ export default function Portfolio() {
             </div>
           </section>
 
-          {/* Awards & Skills */}
-          <section className="space-y-12">
+          {/* Teaching */}
+          <section>
+            <SectionTitle icon={BookOpen} title="Teaching" isDark={darkMode} />
+             <div className="space-y-6">
+              {resumeData.teaching.map((exp, idx) => (
+                <Card key={idx} isDark={darkMode}>
+                  <div className="space-y-1">
+                    <div className="flex justify-between items-start">
+                      <h3 className={`font-bold ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>{exp.role}</h3>
+                      <span className="text-xs font-mono text-slate-500 whitespace-nowrap ml-2">{exp.period}</span>
+                    </div>
+                    <p className="text-cyan-500 text-sm">{exp.course}</p>
+                    <p className={`text-xs ${darkMode ? 'text-slate-500' : 'text-slate-500'}`}>{exp.school}</p>
+                    <ul className={`list-disc list-inside mt-2 text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                      {exp.details.map((detail, dIdx) => (
+                         <li key={dIdx} className="text-xs">{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Awards & Grants Grid */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Awards */}
+          <section id="honors" className="scroll-mt-24">
             <div>
               <SectionTitle icon={Award} title="Honors & Awards" isDark={darkMode} />
               <ul className="space-y-3">
@@ -412,24 +327,23 @@ export default function Portfolio() {
                 ))}
               </ul>
             </div>
+          </section>
 
+          {/* Grants */}
+          <section>
             <div>
-               <SectionTitle icon={Terminal} title="Technical Skills" isDark={darkMode} />
-               <div className="space-y-4">
-                 <div>
-                   <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Languages</h4>
-                   <div className="flex flex-wrap gap-2">
-                     {resumeData.skills.languages.map(s => <Badge key={s} type="tech" isDark={darkMode}>{s}</Badge>)}
-                   </div>
-                 </div>
-                 <div>
-                   <h4 className="text-xs font-mono text-slate-500 uppercase mb-2">Libraries & Tools</h4>
-                   <div className="flex flex-wrap gap-2">
-                     {resumeData.skills.libs.map(s => <Badge key={s} type="tech" isDark={darkMode}>{s}</Badge>)}
-                     {resumeData.skills.tools.map(s => <Badge key={s} type="tech" isDark={darkMode}>{s}</Badge>)}
-                   </div>
-                 </div>
-               </div>
+              <SectionTitle icon={Award} title="Grants & Fellowships" isDark={darkMode} />
+              <ul className="space-y-3">
+                {resumeData.grants.map((grant, idx) => (
+                  <li key={idx} className={`flex flex-col sm:flex-row sm:items-start justify-between text-sm border-b pb-2 last:border-0 ${darkMode ? 'border-slate-800/50' : 'border-slate-200'}`}>
+                    <div className="flex flex-col">
+                      <span className={`font-medium ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>{grant.title}</span>
+                      <span className={`text-xs ${darkMode ? 'text-slate-500' : 'text-slate-500'}`}>{grant.org}, {grant.amount}</span>
+                    </div>
+                    <span className="font-mono text-slate-500 text-xs whitespace-nowrap sm:ml-4 mt-1 sm:mt-0">{grant.period}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         </div>
@@ -438,7 +352,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className={`py-8 text-center text-sm border-t ${darkMode ? 'border-slate-800/50 bg-slate-950 text-slate-600' : 'border-slate-200 bg-slate-50 text-slate-500'}`}>
-        <p>© {new Date().getFullYear()} Hyunho Kook. Built with React & Tailwind.</p>
+        <p>© {new Date().getFullYear()} Hyunho Kook. Last updated: 2025-11-24</p>
       </footer>
     </div>
   );
