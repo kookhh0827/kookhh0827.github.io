@@ -10,9 +10,10 @@ export const resumeData = {
     image: "/my_photo.jpg", 
   },
   interests: [
-    "Neuromorphic Computing",
-    "Spiking Neural Networks",
-    "Efficient AI Systems",
+    "Neuromorphic Computing & SNNs",
+    "Efficient AI & Hardware Acceleration",
+    "Generative AI & Large Models",
+    "Agent Systems"
   ],
   education: [
     {
@@ -35,7 +36,7 @@ export const resumeData = {
       role: "Visiting Scholar",
       org: "Carnegie Mellon University",
       location: "Pittsburgh, PA",
-      period: "Aug 2025 - Feb 2026",
+      period: "Aug 2025 - Present",
       details: [
         "Audio Language Model for Speaker Profiling (Prof. Bhiksha Raj)",
         "Language Model Agent System and Acceleration (Prof. Beidi Chen)",
@@ -67,21 +68,21 @@ export const resumeData = {
   publications: [
     {
       title: "Maximal Coupling Speculative Jacobi Decoding",
-      authors: "Junhyuk So, Hyunho Kook, Eunhyeok Park",
+      authors: "Junhyuk So, **Hyunho Kook**, Chaeyeon Jang, Eunhyeok Park",
       venue: "ICLR 2026 (Under Review)",
       status: "under_review",
       desc: "Accelerate Autoregressive Image/Video Generation ~12x Times With No Loss."
     },
     {
       title: "Stabilizing Direct Training of Spiking Neural Networks: Membrane Potential Initialization and Threshold-robust Surrogate Gradient",
-      authors: "Hyunho Kook, Byeongho Yu, Jeongmin Oh, Eunhyeok Park",
+      authors: "**Hyunho Kook**, Byeongho Yu, Jeongmin Oh, Eunhyeok Park",
       venue: "WACV 2026",
       status: "accepted",
       desc: "Handle Temporal Covariate Shift and Instability in Surrogate Gradient Descent."
     },
     {
       title: "Grouped Speculative Decoding for Autoregressive Image Generation",
-      authors: "Junhyuk So, Juncheol Shin, Hyunho Kook, Eunhyeok Park",
+      authors: "Junhyuk So, Juncheol Shin, **Hyunho Kook**, Eunhyeok Park",
       venue: "ICCV 2025",
       status: "accepted",
       desc: "Accelerate Autoregressive Image Generation ~3x Times With Minimal Loss."
@@ -109,8 +110,8 @@ export const resumeData = {
   ],
   awards: [
     { title: "Bachelor's Best Paper", year: "2023", org: "POSTECH" },
-    { title: "CODEGATE CTF Competition (2nd place, University Section)", year: "2020", org: "Codegate" },
-    { title: "DEFCON 27 CTF (9th place)", year: "2019", org: "Defcon" },
+    { title: "CODEGATE CTF Competition (2nd place, University Section)", year: "2020", org: "CODEGATE" },
+    { title: "DEFCON 27 CTF (9th place)", year: "2019", org: "DEFCON" },
   ],
   grants: [
     {

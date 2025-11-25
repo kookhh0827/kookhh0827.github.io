@@ -121,10 +121,10 @@ export default function Portfolio() {
           <div className="flex-1 space-y-6">
             <div className="space-y-2">
               <h2 className="text-cyan-500 font-mono text-sm tracking-wide">HELLO, I'M</h2>
-              <h1 className={`text-5xl md:text-7xl font-bold tracking-tight ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
+              <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
                 {resumeData.profile.name}
               </h1>
-              <p className={`text-xl md:text-2xl font-light ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+              <p className={`text-lg sm:text-xl md:text-2xl font-light ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                 {resumeData.profile.title}
               </p>
             </div>
@@ -217,7 +217,11 @@ export default function Portfolio() {
                     <h3 className={`text-lg font-bold transition-colors ${darkMode ? 'text-slate-100 group-hover:text-cyan-400' : 'text-slate-800 group-hover:text-cyan-600'}`}>
                       {pub.title}
                     </h3>
-                    <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>{pub.authors}</p>
+                    <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                      {pub.authors.split('**').map((part, i) => 
+                        i % 2 === 1 ? <span key={i} className={`font-bold ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>{part}</span> : part
+                      )}
+                    </p>
                     <div className="flex items-center gap-2 text-sm text-slate-500">
                       <p className="font-mono text-xs">{pub.desc}</p>
                     </div>
@@ -249,9 +253,9 @@ export default function Portfolio() {
                     <h3 className={`text-xl font-bold ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>{exp.role}</h3>
                     <span className="font-mono text-sm text-cyan-500">{exp.period}</span>
                   </div>
-                  <div className={`font-medium flex items-center gap-2 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                    {exp.org}
-                    <span className={`w-1 h-1 rounded-full ${darkMode ? 'bg-slate-600' : 'bg-slate-400'}`}></span>
+                  <div className={`font-medium flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                    <span>{exp.org}</span>
+                    <span className={`hidden sm:block w-1 h-1 rounded-full ${darkMode ? 'bg-slate-600' : 'bg-slate-400'}`}></span>
                     <span className={`text-sm font-normal ${darkMode ? 'text-slate-500' : 'text-slate-500'}`}>{exp.location}</span>
                   </div>
                   <ul className={`list-disc list-outside ml-4 space-y-1 pt-2 text-sm marker:text-cyan-500/50 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
@@ -277,7 +281,7 @@ export default function Portfolio() {
                     <h3 className={`font-bold ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>{edu.school}</h3>
                     <p className="text-cyan-500 text-sm">{edu.degree}</p>
                     <p className={`text-sm mt-1 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>Advisor: {edu.advisor}</p>
-                    <div className="flex justify-between text-xs text-slate-500 font-mono mt-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between text-xs text-slate-500 font-mono mt-2 gap-1">
                       <span>{edu.period}</span>
                       <span>GPA: {edu.gpa}</span>
                     </div>
@@ -294,9 +298,9 @@ export default function Portfolio() {
               {resumeData.teaching.map((exp, idx) => (
                 <Card key={idx} isDark={darkMode}>
                   <div className="space-y-1">
-                    <div className="flex justify-between items-start">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                       <h3 className={`font-bold ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>{exp.role}</h3>
-                      <span className="text-xs font-mono text-slate-500 whitespace-nowrap ml-2">{exp.period}</span>
+                      <span className="text-xs font-mono text-slate-500 whitespace-nowrap">{exp.period}</span>
                     </div>
                     <p className="text-cyan-500 text-sm">{exp.course}</p>
                     <p className={`text-xs ${darkMode ? 'text-slate-500' : 'text-slate-500'}`}>{exp.school}</p>
@@ -320,9 +324,12 @@ export default function Portfolio() {
               <SectionTitle icon={Award} title="Honors & Awards" isDark={darkMode} />
               <ul className="space-y-3">
                 {resumeData.awards.map((award, idx) => (
-                  <li key={idx} className={`flex items-start justify-between text-sm border-b pb-2 last:border-0 ${darkMode ? 'border-slate-800/50' : 'border-slate-200'}`}>
-                    <span className={`${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>{award.title}</span>
-                    <span className="font-mono text-slate-500 text-xs whitespace-nowrap ml-4">{award.year}</span>
+                  <li key={idx} className={`flex flex-col sm:flex-row sm:items-start justify-between text-sm border-b pb-2 last:border-0 ${darkMode ? 'border-slate-800/50' : 'border-slate-200'}`}>
+                    <div className="flex flex-col">
+                      <span className={`${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>{award.title}</span>
+                      <span className={`text-xs ${darkMode ? 'text-slate-500' : 'text-slate-500'}`}>{award.org}</span>
+                    </div>
+                    <span className="font-mono text-slate-500 text-xs whitespace-nowrap sm:ml-4 mt-1 sm:mt-0">{award.year}</span>
                   </li>
                 ))}
               </ul>
