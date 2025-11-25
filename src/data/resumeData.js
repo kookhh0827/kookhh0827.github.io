@@ -44,7 +44,7 @@ export const resumeData = {
     },
     {
       role: "Undergraduate Research Intern",
-      org: "POSTECH (Efficient Computing Lab)",
+      org: "POSTECH",
       location: "Pohang, Korea",
       period: "Jan 2023 - Dec 2023",
       details: [
@@ -55,7 +55,7 @@ export const resumeData = {
     },
     {
       role: "Undergraduate Research Intern",
-      org: "POSTECH (Efficient Computing Lab)",
+      org: "POSTECH",
       location: "Pohang, Korea",
       period: "Jan 2020 - Mar 2021",
       details: [
