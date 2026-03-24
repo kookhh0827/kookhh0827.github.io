@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Github, FileText, MapPin, ExternalLink, Calendar, Award, Terminal, Cpu, BookOpen, Sun, Moon, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Github, FileText, MapPin, ExternalLink, Calendar, Award, Terminal, Cpu, BookOpen, Sun, Moon, Linkedin, Instagram, Newspaper } from 'lucide-react';
 import { resumeData } from './data/resumeData';
+import { newsData } from './data/newsData';
 
 // --- COMPONENTS ---
 
@@ -95,7 +96,7 @@ export default function Portfolio() {
             KOOK<span className="text-cyan-500 animate-pulse">.</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium">
-            {['About', 'Publications', 'Experience', 'Education', 'Honors'].map(item => (
+            {['About', 'News', 'Publications', 'Experience', 'Education', 'Honors'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-cyan-500 transition-colors hidden sm:block">
                 {item}
               </a>
@@ -205,7 +206,33 @@ export default function Portfolio() {
         The navigation bar links to #about, #publications, and #experience.
       */}
       <main className="max-w-5xl mx-auto px-6 py-12 space-y-24 z-10 relative">
-        
+
+        {/* News */}
+        <section id="news" className="scroll-mt-24">
+          <SectionTitle icon={Newspaper} title="News" isDark={darkMode} />
+          <div className="grid gap-4">
+            {newsData.map((news, idx) => (
+              <Card key={idx} className="group cursor-default" isDark={darkMode}>
+                <div className="flex flex-col md:flex-row gap-4 md:items-start justify-between">
+                  <div className="space-y-2">
+                    <h3 className={`text-lg font-bold transition-colors ${darkMode ? 'text-slate-100 group-hover:text-cyan-400' : 'text-slate-800 group-hover:text-cyan-600'}`}>
+                      {news.title}
+                    </h3>
+                    <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                      {news.description}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 flex md:flex-col items-start md:items-end gap-2">
+                    <Badge type="success" isDark={darkMode}>
+                      {news.date}
+                    </Badge>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
         {/* Publications */}
         <section id="publications" className="scroll-mt-24">
           <SectionTitle icon={FileText} title="Selected Publications" isDark={darkMode} />
