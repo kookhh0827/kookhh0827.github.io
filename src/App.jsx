@@ -217,14 +217,12 @@ export default function Portfolio() {
                     <h3 className={`text-lg font-bold transition-colors ${darkMode ? 'text-slate-100 group-hover:text-cyan-400' : 'text-slate-800 group-hover:text-cyan-600'}`}>
                       {news.title}
                     </h3>
-                    <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                    <p className={`text-xs font-mono mb-2 ${darkMode ? 'text-cyan-500' : 'text-cyan-600'}`}>
+                      {news.date}
+                    </p>
+                    <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                       {news.description}
                     </p>
-                  </div>
-                  <div className="flex-shrink-0 flex md:flex-col items-start md:items-end gap-2">
-                    <Badge type="success" isDark={darkMode}>
-                      {news.date}
-                    </Badge>
                   </div>
                 </div>
               </Card>
