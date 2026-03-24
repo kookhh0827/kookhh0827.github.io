@@ -223,6 +223,16 @@ export default function Portfolio() {
                     <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
                       {news.description}
                     </p>
+                    {news.link && (
+                      <a 
+                        href={news.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`inline-flex items-center gap-1 text-xs font-medium mt-2 hover:underline ${darkMode ? 'text-cyan-400' : 'text-cyan-600'}`}
+                      >
+                        Read more <ExternalLink size={12} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </Card>
