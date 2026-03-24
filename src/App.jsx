@@ -130,8 +130,7 @@ export default function Portfolio() {
             </div>
             
             <p className={`max-w-lg leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-              Researching <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Neuromorphic Computing</span> and <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Efficient AI</span>. 
-              Currently exploring <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>LLM Acceleration</span> and <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Agent Systems</span>.
+              Researching <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Neuromorphic Computing</span>, <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Efficient AI</span>, and <span className={`font-medium ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>Generative Models</span>. 
               Based in {resumeData.profile.location}.
             </p>
 
@@ -222,9 +221,6 @@ export default function Portfolio() {
                         i % 2 === 1 ? <span key={i} className={`font-bold ${darkMode ? 'text-slate-200' : 'text-slate-900'}`}>{part}</span> : part
                       )}
                     </p>
-                    <div className="flex items-center gap-2 text-sm text-slate-500">
-                      <p className="font-mono text-xs">{pub.desc}</p>
-                    </div>
                   </div>
                   <div className="flex-shrink-0 flex md:flex-col items-start md:items-end gap-2">
                     <Badge type={pub.status === 'accepted' ? 'success' : 'warning'} isDark={darkMode}>

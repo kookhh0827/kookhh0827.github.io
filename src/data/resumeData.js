@@ -1,19 +1,18 @@
 export const resumeData = {
   profile: {
     name: "Hyunho Kook",
-    title: "M.S. Student in CS @ POSTECH",
-    location: "Pohang, Korea / Pittsburgh, PA",
+    title: "M.S. Student in CSE @ POSTECH",
+    location: "Pohang, Korea",
     email: "kookhh0827@postech.ac.kr",
     github: "https://github.com/kookhh0827", 
     scholar: "https://scholar.google.com/citations?user=X4vG8UoAAAAJ&hl=en",
-    linkedin: "https://www.linkedin.com/in/hyunho-kook/", // Placeholder
+    linkedin: "https://www.linkedin.com/in/hyunho-kook/",
     image: "/my_photo.jpg", 
   },
   interests: [
     "Neuromorphic Computing & SNNs",
     "Efficient AI & Hardware Acceleration",
-    "Generative AI & Large Models",
-    "Agent Systems"
+    "Generative AI & Large Models"
   ],
   education: [
     {
@@ -36,7 +35,7 @@ export const resumeData = {
       role: "Visiting Scholar",
       org: "Carnegie Mellon University",
       location: "Pittsburgh, PA",
-      period: "Aug 2025 - Present",
+      period: "Aug 2025 - Feb 2026",
       details: [
         "Audio Language Model for Speaker Profiling (Prof. Bhiksha Raj)",
         "Language Model Agent System and Acceleration (Prof. Beidi Chen)",
@@ -70,22 +69,19 @@ export const resumeData = {
       title: "Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation",
       authors: "Junhyuk So, **Hyunho Kook**, Chaeyeon Jang, Eunhyeok Park",
       venue: "ICML 2026 (Under Review)",
-      status: "under_review",
-      desc: "Accelerate Autoregressive Image/Video Generation ~12x Times With No Loss."
+      status: "under_review"
     },
     {
       title: "Stabilizing Direct Training of Spiking Neural Networks: Membrane Potential Initialization and Threshold-robust Surrogate Gradient",
       authors: "**Hyunho Kook**, Byeongho Yu, Jeongmin Oh, Eunhyeok Park",
       venue: "WACV 2026 (Poster)",
-      status: "accepted",
-      desc: "Handle Temporal Covariate Shift and Instability in Surrogate Gradient Descent."
+      status: "accepted"
     },
     {
       title: "Grouped Speculative Decoding for Autoregressive Image Generation",
       authors: "Junhyuk So, Juncheol Shin, **Hyunho Kook**, Eunhyeok Park",
       venue: "ICCV 2025 (Poster)",
-      status: "accepted",
-      desc: "Accelerate Autoregressive Image Generation ~3x Times With Minimal Loss."
+      status: "accepted"
     }
   ],
   teaching: [
