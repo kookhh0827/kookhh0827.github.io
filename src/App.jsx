@@ -96,7 +96,7 @@ export default function Portfolio() {
             KOOK<span className="text-cyan-500 animate-pulse">.</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium">
-            {['About', 'Publications', 'Experience', 'Education', 'Honors'].map(item => (
+            {['About', 'News', 'Publications', 'Experience', 'Education', 'Honors'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-cyan-500 transition-colors hidden sm:block">
                 {item}
               </a>
@@ -206,7 +206,7 @@ export default function Portfolio() {
       */}
       <main className="max-w-5xl mx-auto px-6 py-12 space-y-24 z-10 relative">
 
-        {/* News (Temporarily Hidden)
+        {/* News */}
         <section id="news" className="scroll-mt-24">
           <SectionTitle icon={Newspaper} title="News" isDark={darkMode} />
           <div className="grid gap-4">
@@ -238,7 +238,6 @@ export default function Portfolio() {
             ))}
           </div>
         </section>
-        */}
 
         {/* Publications */}
         <section id="publications" className="scroll-mt-24">
