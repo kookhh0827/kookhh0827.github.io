@@ -3,7 +3,7 @@ export const resumeData = {
     name: "Hyunho Kook",
     title: "M.S. Student in CSE @ POSTECH",
     location: "Pohang, Korea",
-    email: "kookhh0827@postech.ac.kr",
+    email: "kookhh0827@gmail.com",
     github: "https://github.com/kookhh0827", 
     scholar: "https://scholar.google.com/citations?user=X4vG8UoAAAAJ&hl=en",
     linkedin: "https://www.linkedin.com/in/hyunho-kook/",
@@ -37,9 +37,8 @@ export const resumeData = {
       location: "Pittsburgh, PA",
       period: "Aug 2025 - Feb 2026",
       details: [
-        "Audio Language Model for Speaker Profiling (Prof. Bhiksha Raj)",
-        "Language Model Agent System and Acceleration (Prof. Beidi Chen)",
-        "Diffusion Transformer and Efficiency (Prof. Andrea Zanette)"
+        "Language Model Agent System and Acceleration (Dr. Haizhong Zheng)",
+        "Diffusion Transformer and Its Efficiency (Prof. Andrea Zanette)"
       ]
     },
     {
