@@ -68,8 +68,8 @@ export const resumeData = {
     {
       title: "Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation",
       authors: "Junhyuk So, **Hyunho Kook**, Chaeyeon Jang, Eunhyeok Park",
-      venue: "ICML 2026 (Under Review)",
-      status: "under_review"
+      venue: "ICML 2026 (Poster)",
+      status: "accepted"
     },
     {
       title: "Stabilizing Direct Training of Spiking Neural Networks: Membrane Potential Initialization and Threshold-robust Surrogate Gradient",
