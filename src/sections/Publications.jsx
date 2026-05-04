@@ -1,4 +1,4 @@
-import { FileText, Github, ExternalLink, BookOpen } from 'lucide-react';
+import { FileText, Github, ExternalLink } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import Card from '../components/Card';
 import Badge from '../components/Badge';
@@ -7,10 +7,7 @@ import { resumeData } from '../data/resumeData';
 
 const LINK_META = {
   arxiv: { label: 'arXiv', icon: ExternalLink },
-  pdf: { label: 'PDF', icon: FileText },
   code: { label: 'Code', icon: Github },
-  openreview: { label: 'OpenReview', icon: BookOpen },
-  project: { label: 'Project', icon: ExternalLink },
 };
 
 function PubLink({ type, href, darkMode }) {

@@ -71,8 +71,7 @@ export const resumeData = {
       year: 2026,
       status: "accepted",
       links: {
-        arxiv: "https://arxiv.org/abs/2510.24211",
-        openreview: "https://openreview.net/forum?id=7a95PGL0Up"
+        arxiv: "https://arxiv.org/abs/2510.24211"
       }
     },
     {
@@ -94,8 +93,7 @@ export const resumeData = {
       status: "accepted",
       links: {
         arxiv: "https://arxiv.org/abs/2508.07747",
-        code: "https://github.com/junhyukso/GSD",
-        pdf: "https://openaccess.thecvf.com/content/ICCV2025/papers/So_Grouped_Speculative_Decoding_for_Autoregressive_Image_Generation_ICCV_2025_paper.pdf"
+        code: "https://github.com/junhyukso/GSD"
       }
     }
   ],
