@@ -118,6 +118,7 @@ export const resumeData = {
     }
   ],
   honors: [
+    { title: "Bang Seung-Yang Graduate Fellowship", year: "Mar 2024", org: "POSTECH", detail: "$1,000 (~1.5M KRW)", type: "grant" },
     { title: "Bachelor's Best Paper", year: "2023", org: "POSTECH", type: "award" },
     { title: "CODEGATE CTF Competition (2nd place, University Section)", year: "2020", org: "CODEGATE", type: "award" },
     { title: "DEFCON 27 CTF (9th place)", year: "2019", org: "DEFCON", type: "award" },
