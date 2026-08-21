@@ -86,7 +86,8 @@ export const resumeData = {
       year: 2026,
       status: "accepted",
       links: {
-        arxiv: "https://arxiv.org/abs/2510.24211"
+        arxiv: "https://arxiv.org/abs/2510.24211",
+        code: "https://github.com/junhyukso/SCD"
       }
     },
     {
