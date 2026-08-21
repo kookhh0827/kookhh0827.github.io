@@ -74,7 +74,7 @@ export const resumeData = {
     {
       title: "Beyond Confidence: Test-Time Scaling for Multi-Turn Search Agents via Retrieval Grounding",
       authors: "**Hyunho Kook**, Junhyuk So, Tianyu Fu, Haizhong Zheng, Beidi Chen",
-      venue: "EMNLP 2026 (Findings)",
+      venue: "EMNLP 2026",
       year: 2026,
       status: "accepted",
       links: {}
@@ -82,7 +82,7 @@ export const resumeData = {
     {
       title: "Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation",
       authors: "Junhyuk So, **Hyunho Kook**, Chaeyeon Jang, Eunhyeok Park",
-      venue: "ICML 2026 (Poster)",
+      venue: "ICML 2026",
       year: 2026,
       status: "accepted",
       links: {
@@ -93,7 +93,7 @@ export const resumeData = {
     {
       title: "Stabilizing Direct Training of Spiking Neural Networks: Membrane Potential Initialization and Threshold-robust Surrogate Gradient",
       authors: "**Hyunho Kook**, Byeongho Yu, Jeongmin Oh, Eunhyeok Park",
-      venue: "WACV 2026 (Poster)",
+      venue: "WACV 2026",
       year: 2026,
       status: "accepted",
       links: {
@@ -104,7 +104,7 @@ export const resumeData = {
     {
       title: "Grouped Speculative Decoding for Autoregressive Image Generation",
       authors: "Junhyuk So, Juncheol Shin, **Hyunho Kook**, Eunhyeok Park",
-      venue: "ICCV 2025 (Poster)",
+      venue: "ICCV 2025",
       year: 2025,
       status: "accepted",
       links: {
