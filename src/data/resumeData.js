@@ -1,8 +1,8 @@
 export const resumeData = {
   profile: {
     name: "Hyunho Kook",
-    title: "M.S. Student in CSE @ POSTECH",
-    location: "Pohang, Korea",
+    title: "Ph.D. Student in ECE @ USC",
+    location: "Los Angeles, CA",
     email: "kookhh0827@gmail.com",
     github: "https://github.com/kookhh0827",
     scholar: "https://scholar.google.com/citations?user=X4vG8UoAAAAJ&hl=en",
@@ -16,11 +16,18 @@ export const resumeData = {
   ],
   education: [
     {
+      school: "University of Southern California (USC)",
+      degree: "Ph.D. in Electrical and Computer Engineering",
+      period: "Aug 2026 - Present",
+      advisor: "Prof. Priya Panda",
+    },
+    {
       school: "Pohang University of Science and Technology (POSTECH)",
       degree: "M.S. in Computer Science and Engineering",
-      period: "Feb 2024 - Present",
+      period: "Feb 2024 - Aug 2026",
       gpa: "4.15 / 4.30",
       advisor: "Prof. Eunhyeok Park",
+      thesis: "Enhancing Stability in Direct Training of Spiking Neural Networks: Membrane Potential Initialization and Threshold-robust Surrogate Gradient",
     },
     {
       school: "Pohang University of Science and Technology (POSTECH)",
@@ -64,6 +71,14 @@ export const resumeData = {
     },
   ],
   publications: [
+    {
+      title: "Beyond Confidence: Test-Time Scaling for Multi-Turn Search Agents via Retrieval Grounding",
+      authors: "**Hyunho Kook**, Junhyuk So, Tianyu Fu, Haizhong Zheng, Beidi Chen",
+      venue: "EMNLP 2026 (Findings)",
+      year: 2026,
+      status: "accepted",
+      links: {}
+    },
     {
       title: "Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation",
       authors: "Junhyuk So, **Hyunho Kook**, Chaeyeon Jang, Eunhyeok Park",

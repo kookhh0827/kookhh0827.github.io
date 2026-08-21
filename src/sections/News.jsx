@@ -5,6 +5,22 @@ import Card from '../components/Card';
 import { useTheme } from '../contexts/ThemeContext';
 import { newsData } from '../data/newsData';
 
+function NewsDescription({ news, darkMode }) {
+  if (!news.link || !news.linkText || !news.description.includes(news.linkText)) {
+    return news.description;
+  }
+  return news.description.split(news.linkText).map((part, i, arr) =>
+    i === arr.length - 1 ? part : (
+      <React.Fragment key={i}>
+        {part}
+        <a href={news.link} target="_blank" rel="noopener noreferrer" className={`font-medium hover:underline ${darkMode ? 'text-cyan-400' : 'text-cyan-600'}`}>
+          {news.linkText}
+        </a>
+      </React.Fragment>
+    )
+  );
+}
+
 export default function News() {
   const { darkMode } = useTheme();
   return (
@@ -22,16 +38,7 @@ export default function News() {
                   {news.date}
                 </p>
                 <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                  {news.description.split('Intelligent Computing Lab').map((part, i, arr) =>
-                    i === arr.length - 1 ? part : (
-                      <React.Fragment key={i}>
-                        {part}
-                        <a href={news.link} target="_blank" rel="noopener noreferrer" className={`font-medium hover:underline ${darkMode ? 'text-cyan-400' : 'text-cyan-600'}`}>
-                          Intelligent Computing Lab
-                        </a>
-                      </React.Fragment>
-                    )
-                  )}
+                  <NewsDescription news={news} darkMode={darkMode} />
                 </p>
               </div>
             </div>
